@@ -41,6 +41,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          platforms: linux/arm64
           push: true
           build-args: 'FOLDER_NAME=Linux-chardonnay'
           tags: ${{ env.DOCKER_IMAGE }}:latest,${{ env.DOCKER_IMAGE }}:${{ inputs.version }}
