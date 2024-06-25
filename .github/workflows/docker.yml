@@ -15,6 +15,17 @@ on:
         required: true
       docker_token:
         required: true
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: 'Version number'
+        required: true
+    secrets:
+      docker_username:
+        required: true
+      docker_token:
+        required: true
 
 env:
   DOCKER_IMAGE: ${{ secrets.docker_username }}/libation
